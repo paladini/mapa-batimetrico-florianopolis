@@ -17,6 +17,13 @@ ls data/vectorized/
 
 Ou baixe arquivos individuais diretamente pela [landing page](https://paladini.github.io/mapa-batimetrico-florianopolis/) ou via [GitHub Releases](https://github.com/paladini/mapa-batimetrico-florianopolis/releases) (para dados de alta resolução).
 
+Para navegar pelos dados interativamente no browser:
+
+```bash
+python3 serve.py
+# Abra http://localhost:8080/viewer.html
+```
+
 ## Dados disponíveis
 
 ### Isolinhas batimétricas (curvas de profundidade)
@@ -100,6 +107,24 @@ isobaths <- st_read("data/vectorized/isobaths_z14.geojson")
 plot(isobaths["band_deep"])
 ```
 
+## Site
+
+O projeto tem uma landing page bilíngue que explica o dataset, mostra todos os downloads disponíveis, bandas de profundidade, cobertura, compatibilidade com ferramentas GIS e exemplos de código:
+
+**[paladini.github.io/mapa-batimetrico-florianopolis](https://paladini.github.io/mapa-batimetrico-florianopolis/)**
+
+## Download de dados em alta resolução (z16 + z18)
+
+Os arquivos de visão geral e detalhe médio (z12 + z14) estão incluídos diretamente no repositório. Para **alto detalhe** (~2,1 m/px) e **máximo detalhe** (~0,5 m/px), baixe pela Release do GitHub:
+
+**[Baixar z16 + z18 da Release v1.0.0](https://github.com/paladini/mapa-batimetrico-florianopolis/releases/tag/v1.0.0)**
+
+Assets da Release:
+- `isobaths_z16.geojson` (145.237 features, 80 MB)
+- `isobaths_z18.geojson` (1.272.324 features, 524 MB)
+- `coastline_z16.geojson` (32.459 features, 28 MB)
+- `coastline_z18.geojson` (143.819 features, 91 MB)
+
 ## Estrutura
 
 ```
@@ -109,13 +134,13 @@ plot(isobaths["band_deep"])
 │   ├── coastline_z12.geojson   # Linha de costa — visão geral
 │   ├── coastline_z14.geojson   # Linha de costa — detalhe médio
 │   └── metadata.json           # Metadados do dataset
+├── viewer.html                 # Visualizador interativo (Leaflet.js)
+├── serve.py                    # Servidor HTTP local
 ├── index.html                  # Landing page (PT-BR)
 ├── index.en.html               # Landing page (EN)
 ├── README.md                   # Documentação em inglês
 └── README.pt-BR.md             # Documentação em português
 ```
-
-Arquivos de alta e máxima resolução (z16 + z18) estão disponíveis como [assets da Release no GitHub](https://github.com/paladini/mapa-batimetrico-florianopolis/releases/tag/v1.0.0).
 
 ## Licença
 
