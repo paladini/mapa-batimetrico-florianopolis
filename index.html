@@ -82,7 +82,7 @@
         .dc{background:var(--w);border:1px solid var(--b1);border-radius:var(--r);padding:24px;transition:box-shadow .15s}
         .dc:hover{box-shadow:0 2px 12px rgba(14,45,72,.08)}
         .ft{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:3px 8px;border-radius:3px;margin-bottom:10px}
-        .tg{background:#dbeafe;color:#1e40af}.tc{background:#fef3c7;color:#92400e}
+        .tg{background:#dbeafe;color:#1e40af}.tc{background:#fef3c7;color:#92400e}.ta{background:#ddd6fe;color:#5b21b6}
         .dc h3{font-size:1rem;color:var(--b9);margin-bottom:6px}
         .dc p{font-size:.88rem;color:var(--g5);margin-bottom:14px;line-height:1.5}
         .dc .m{font-size:.8rem;color:var(--g5);margin-bottom:14px}
@@ -152,6 +152,42 @@
     <div class="c">
         <h2>Download dos dados</h2>
         <p class="slead">Arquivos GeoJSON prontos para uso — basta baixar e abrir no QGIS, Google Earth, Leaflet, geopandas ou qualquer ferramenta GIS.</p>
+
+        <h3 style="font-size:1.1rem;color:var(--b9);margin-bottom:12px">Áreas de profundidade (polígonos preenchidos)</h3>
+        <p class="slead" style="margin-bottom:16px">Cada polígono representa uma área contígua de mesma faixa de profundidade, com cor de preenchimento. Ideal para visualização direta.</p>
+        <div class="dg">
+            <article class="dc">
+                <span class="ft ta">Áreas</span>
+                <h3>Visão geral (~34 m/px)</h3>
+                <p>1.167 polígonos preenchidos com 9 bandas de profundidade coloridas.</p>
+                <div class="m">depth_areas_z12.geojson · 750 KB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/releases/download/v1.0.0/depth_areas_z12.geojson" class="btn bp" download>Baixar</a>
+            </article>
+            <article class="dc">
+                <span class="ft ta">Áreas</span>
+                <h3>Detalhe médio (~8.5 m/px)</h3>
+                <p>4.420 polígonos preenchidos. Bom equilíbrio entre detalhe e tamanho.</p>
+                <div class="m">depth_areas_z14.geojson · 2.9 MB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/releases/download/v1.0.0/depth_areas_z14.geojson" class="btn bp" download>Baixar</a>
+            </article>
+            <article class="dc">
+                <span class="ft ta">Áreas</span>
+                <h3>Alto detalhe (~2.1 m/px)</h3>
+                <p>22.870 polígonos preenchidos. Detalhe fino para áreas específicas.</p>
+                <div class="m">depth_areas_z16.geojson · 14 MB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/releases/download/v1.0.0/depth_areas_z16.geojson" class="btn bp" download>Baixar</a>
+            </article>
+            <article class="dc">
+                <span class="ft ta">Áreas</span>
+                <h3>Máximo detalhe (~0.5 m/px)</h3>
+                <p>217.041 polígonos preenchidos. Resolução submétrica.</p>
+                <div class="m">depth_areas_z18.geojson · 105 MB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/releases/download/v1.0.0/depth_areas_z18.geojson" class="btn bp" download>Baixar</a>
+            </article>
+        </div>
+
+        <h3 style="margin-top:28px;font-size:1.1rem;color:var(--b9);margin-bottom:12px">Isolinhas batimétricas (contornos)</h3>
+        <p class="slead" style="margin-bottom:16px">Linhas de contorno entre bandas de profundidade adjacentes. Útil para análises geoespaciais e sobreposição.</p>
         <div class="dg">
             <article class="dc">
                 <span class="ft tg">Isolinhas</span>

@@ -81,7 +81,7 @@
         .dc{background:var(--w);border:1px solid var(--b1);border-radius:var(--r);padding:24px;transition:box-shadow .15s}
         .dc:hover{box-shadow:0 2px 12px rgba(14,45,72,.08)}
         .ft{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:3px 8px;border-radius:3px;margin-bottom:10px}
-        .tg{background:#dbeafe;color:#1e40af}.tc{background:#fef3c7;color:#92400e}
+        .tg{background:#dbeafe;color:#1e40af}.tc{background:#fef3c7;color:#92400e}.ta{background:#ddd6fe;color:#5b21b6}
         .dc h3{font-size:1rem;color:var(--b9);margin-bottom:6px}
         .dc p{font-size:.88rem;color:var(--g5);margin-bottom:14px;line-height:1.5}
         .dc .m{font-size:.8rem;color:var(--g5);margin-bottom:14px}
@@ -150,6 +150,42 @@
     <div class="c">
         <h2>Download the data</h2>
         <p class="slead">GeoJSON files ready to use — just download and open in QGIS, Google Earth, Leaflet, geopandas, or any GIS tool.</p>
+
+        <h3 style="font-size:1.1rem;color:var(--b9);margin-bottom:12px">Depth areas (filled polygons)</h3>
+        <p class="slead" style="margin-bottom:16px">Each polygon represents a contiguous area of the same depth band, with fill color. Best for direct visualization.</p>
+        <div class="dg">
+            <article class="dc">
+                <span class="ft ta">Areas</span>
+                <h3>Overview (~34 m/px)</h3>
+                <p>1,167 filled polygons with 9 color-coded depth bands.</p>
+                <div class="m">depth_areas_z12.geojson · 750 KB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/releases/download/v1.0.0/depth_areas_z12.geojson" class="btn bp" download>Download</a>
+            </article>
+            <article class="dc">
+                <span class="ft ta">Areas</span>
+                <h3>Medium detail (~8.5 m/px)</h3>
+                <p>4,420 filled polygons. Good balance of detail and size.</p>
+                <div class="m">depth_areas_z14.geojson · 2.9 MB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/releases/download/v1.0.0/depth_areas_z14.geojson" class="btn bp" download>Download</a>
+            </article>
+            <article class="dc">
+                <span class="ft ta">Areas</span>
+                <h3>High detail (~2.1 m/px)</h3>
+                <p>22,870 filled polygons. Fine detail for specific areas.</p>
+                <div class="m">depth_areas_z16.geojson · 14 MB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/releases/download/v1.0.0/depth_areas_z16.geojson" class="btn bp" download>Download</a>
+            </article>
+            <article class="dc">
+                <span class="ft ta">Areas</span>
+                <h3>Maximum detail (~0.5 m/px)</h3>
+                <p>217,041 filled polygons. Sub-meter resolution.</p>
+                <div class="m">depth_areas_z18.geojson · 105 MB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/releases/download/v1.0.0/depth_areas_z18.geojson" class="btn bp" download>Download</a>
+            </article>
+        </div>
+
+        <h3 style="margin-top:28px;font-size:1.1rem;color:var(--b9);margin-bottom:12px">Bathymetric isobaths (contour lines)</h3>
+        <p class="slead" style="margin-bottom:16px">Contour lines between adjacent depth bands. Useful for geospatial analysis and overlays.</p>
         <div class="dg">
             <article class="dc">
                 <span class="ft tg">Isobaths</span>
