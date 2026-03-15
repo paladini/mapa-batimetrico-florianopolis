@@ -106,6 +106,8 @@
         .ci div{background:var(--w);border:1px solid #dcfce7;border-radius:var(--r);padding:16px}
         .ci h3{font-size:.95rem;color:var(--b9);margin-bottom:4px}
         .ci p{font-size:.82rem;color:var(--g5)}
+        .preview{border-radius:var(--r);border:1px solid var(--b1);max-width:100%;height:auto;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+        .preview-wrap{text-align:center;margin-bottom:8px}
         .cb{background:var(--s1)}
         .cd{background:var(--b9);color:#e2e8f0;padding:20px;border-radius:var(--r);overflow-x:auto;font-family:'SF Mono','Consolas','Liberation Mono',monospace;font-size:.85rem;line-height:1.55;margin-bottom:16px}
         .cd .c0{color:#6b8aad}.cd .k{color:#7dd3fc}.cd .s{color:#86efac}.cd .f{color:#fbbf24}
@@ -155,6 +157,7 @@
 
         <h3 style="font-size:1.1rem;color:var(--b9);margin-bottom:12px">Áreas de profundidade (polígonos preenchidos)</h3>
         <p class="slead" style="margin-bottom:16px">Cada polígono representa uma área contígua de mesma faixa de profundidade, com cor de preenchimento. Ideal para visualização direta.</p>
+        <div class="preview-wrap"><img src="images/preview_depth_areas.png" alt="Preview das áreas de profundidade batimétrica da Ilha de Santa Catarina" class="preview" width="600" loading="lazy"></div>
         <div class="dg">
             <article class="dc">
                 <span class="ft ta">Áreas</span>
@@ -188,6 +191,7 @@
 
         <h3 style="margin-top:28px;font-size:1.1rem;color:var(--b9);margin-bottom:12px">Isolinhas batimétricas (contornos)</h3>
         <p class="slead" style="margin-bottom:16px">Linhas de contorno entre bandas de profundidade adjacentes. Útil para análises geoespaciais e sobreposição.</p>
+        <div class="preview-wrap"><img src="images/preview_isobaths.png" alt="Preview das isolinhas batimétricas da Ilha de Santa Catarina" class="preview" width="600" loading="lazy"></div>
         <div class="dg">
             <article class="dc">
                 <span class="ft tg">Isolinhas</span>
@@ -218,6 +222,10 @@
                 <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/raw/main/data/vectorized/coastline_z14.geojson" class="btn bp" download>Baixar</a>
             </article>
         </div>
+
+        <h3 style="margin-top:28px;font-size:1.1rem;color:var(--b9);margin-bottom:12px">Linha de costa</h3>
+        <p class="slead" style="margin-bottom:16px">Contorno terra/água da Ilha de Santa Catarina.</p>
+        <div class="preview-wrap"><img src="images/preview_coastline.png" alt="Preview da linha de costa da Ilha de Santa Catarina" class="preview" width="600" loading="lazy"></div>
 
         <h3 style="margin-top:28px;font-size:1.1rem;color:var(--b9)">Alta e máxima resolução</h3>
         <p class="slead" style="margin-bottom:16px">Arquivos maiores, disponíveis via GitHub Releases.</p>
