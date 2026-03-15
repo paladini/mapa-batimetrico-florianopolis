@@ -19,10 +19,4 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://paladini.github.io/mapa-batimetrico-florianopolis/index.en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://paladini.github.io/mapa-batimetrico-florianopolis/"/>
   </url>
-  <url>
-    <loc>https://paladini.github.io/mapa-batimetrico-florianopolis/viewer.html</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 </urlset>

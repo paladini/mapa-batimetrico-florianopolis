@@ -6,7 +6,7 @@ Vector bathymetric isobaths and coastline for the Greater Florianópolis region 
 
 ## Quick start
 
-Download the GeoJSON files from `data/vectorized/` and open them in any GIS tool — QGIS, Google Earth, Leaflet, geopandas, R, ArcGIS, etc.
+Download the GeoJSON files and open them in any GIS tool — QGIS, Google Earth, Leaflet, geopandas, R, ArcGIS, etc.
 
 ```bash
 git clone https://github.com/paladini/mapa-batimetrico-florianopolis.git
@@ -15,30 +15,29 @@ ls data/vectorized/
 # isobaths_z12.geojson  isobaths_z14.geojson  coastline_z12.geojson  coastline_z14.geojson  metadata.json
 ```
 
-Or browse the interactive viewer:
-
-```bash
-python3 serve.py
-# Open http://localhost:8080/viewer.html
-```
+Or download individual files directly from the [landing page](https://paladini.github.io/mapa-batimetrico-florianopolis/) or from [GitHub Releases](https://github.com/paladini/mapa-batimetrico-florianopolis/releases) (for high-res data).
 
 ## Available data
 
 ### Isobaths (bathymetric contour lines)
 
-| File | Features | Resolution | Size |
-|------|----------|------------|------|
-| `isobaths_z12.geojson` | 4,284 | ~34 m/px (overview) | 2.2 MB |
-| `isobaths_z14.geojson` | 33,469 | ~8.5 m/px (medium detail) | 19 MB |
+| File | Features | Resolution | Size | Download |
+|------|----------|------------|------|----------|
+| `isobaths_z12.geojson` | 4,284 | ~34 m/px (overview) | 2.2 MB | repo |
+| `isobaths_z14.geojson` | 33,469 | ~8.5 m/px (medium detail) | 19 MB | repo |
+| `isobaths_z16.geojson` | 145,237 | ~2.1 m/px (high detail) | 80 MB | [Release](https://github.com/paladini/mapa-batimetrico-florianopolis/releases/tag/v1.0.0) |
+| `isobaths_z18.geojson` | 1,272,324 | ~0.5 m/px (maximum detail) | 524 MB | [Release](https://github.com/paladini/mapa-batimetrico-florianopolis/releases/tag/v1.0.0) |
 
 ### Coastline (land/water boundary)
 
-| File | Features | Resolution | Size |
-|------|----------|------------|------|
-| `coastline_z12.geojson` | 459 | ~34 m/px (overview) | 614 KB |
-| `coastline_z14.geojson` | 7,053 | ~8.5 m/px (medium detail) | 7.8 MB |
+| File | Features | Resolution | Size | Download |
+|------|----------|------------|------|----------|
+| `coastline_z12.geojson` | 459 | ~34 m/px (overview) | 614 KB | repo |
+| `coastline_z14.geojson` | 7,053 | ~8.5 m/px (medium detail) | 7.8 MB | repo |
+| `coastline_z16.geojson` | 32,459 | ~2.1 m/px (high detail) | 28 MB | [Release](https://github.com/paladini/mapa-batimetrico-florianopolis/releases/tag/v1.0.0) |
+| `coastline_z18.geojson` | 143,819 | ~0.5 m/px (maximum detail) | 91 MB | [Release](https://github.com/paladini/mapa-batimetrico-florianopolis/releases/tag/v1.0.0) |
 
-Higher resolutions (up to ~0.5 m/px) can be generated locally — see [Generating higher resolutions](#generating-higher-resolutions).
+> **repo** = included in the repository (download with `git clone`). **Release** = download from [GitHub Releases](https://github.com/paladini/mapa-batimetrico-florianopolis/releases/tag/v1.0.0) (larger files).
 
 ## Depth bands
 
@@ -101,45 +100,22 @@ isobaths <- st_read("data/vectorized/isobaths_z14.geojson")
 plot(isobaths["band_deep"])
 ```
 
-## Generating higher resolutions
-
-The included data covers zoom levels 12 and 14. For higher detail (zoom 16 at ~2.1 m/px, zoom 18 at ~0.5 m/px), you can generate locally:
-
-```bash
-pip install -r requirements.txt
-python3 scripts/vectorize_tiles.py --zoom 16 18
-```
-
-This requires the source tile images (not included in this repository).
-
-| Level | Isobaths | Coastline | Resolution |
-|-------|----------|-----------|------------|
-| Overview (z12) | 4,284 | 459 | ~34 m/px |
-| Medium (z14) | 33,469 | 7,053 | ~8.5 m/px |
-| High (z16)* | 145,237 | 32,459 | ~2.1 m/px |
-| Maximum (z18)* | 1,272,324 | 143,819 | ~0.5 m/px |
-
-*Generate locally with `vectorize_tiles.py`
-
 ## Structure
 
 ```
-├── data/vectorized/            # Bathymetric data (included in repo)
+├── data/vectorized/            # Bathymetric data (z12 + z14 in repo)
 │   ├── isobaths_z12.geojson    # Isobaths — overview
 │   ├── isobaths_z14.geojson    # Isobaths — medium detail
 │   ├── coastline_z12.geojson   # Coastline — overview
 │   ├── coastline_z14.geojson   # Coastline — medium detail
-│   └── metadata.json           # Vectorization metadata
-├── scripts/
-│   ├── vectorize_tiles.py      # Generate isobaths from tile images
-│   └── export_data.py          # Export tile catalog (CSV/JSON/SQLite)
-├── viewer.html                 # Interactive map viewer (Leaflet.js)
-├── serve.py                    # Local HTTP server
+│   └── metadata.json           # Dataset metadata
 ├── index.html                  # Landing page (PT-BR)
 ├── index.en.html               # Landing page (EN)
 ├── README.md                   # English documentation
 └── README.pt-BR.md             # Portuguese documentation
 ```
+
+High and maximum resolution files (z16 + z18) are available as [GitHub Release assets](https://github.com/paladini/mapa-batimetrico-florianopolis/releases/tag/v1.0.0).
 
 ## License
 
