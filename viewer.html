@@ -11,129 +11,73 @@
         #map { width: 100vw; height: 100vh; }
 
         .controls {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 8px;
-            padding: 14px 18px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-            font-size: 13px;
-            max-width: 280px;
+            position: absolute; top: 10px; right: 10px; z-index: 1000;
+            background: rgba(255,255,255,0.96); border-radius: 8px;
+            padding: 14px 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+            font-size: 13px; max-width: 280px;
         }
-        .controls h3 {
-            margin: 0 0 10px 0;
-            font-size: 14px;
-            color: #0c2d48;
-        }
-        .controls label {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin: 5px 0;
-            cursor: pointer;
-        }
-        .controls .section {
-            border-top: 1px solid #e5e7eb;
-            padding-top: 10px;
-            margin-top: 10px;
-        }
-        .controls select {
-            width: 100%;
-            padding: 5px 8px;
-            border: 1px solid #d1d5db;
-            border-radius: 4px;
-            font-size: 13px;
-            margin-top: 4px;
-        }
-        .controls .hint {
-            font-size: 11px;
-            color: #6b7280;
-            margin-top: 6px;
-        }
+        .controls h3 { margin: 0 0 10px; font-size: 14px; color: #0c2d48; }
+        .controls label { display: flex; align-items: center; gap: 6px; margin: 5px 0; cursor: pointer; }
+        .controls .section { border-top: 1px solid #e5e7eb; padding-top: 10px; margin-top: 10px; }
+        .controls select { width: 100%; padding: 5px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 13px; margin-top: 4px; }
+        .controls .hint { font-size: 11px; color: #6b7280; margin-top: 6px; }
 
         .info-box {
-            position: absolute;
-            bottom: 30px;
-            left: 10px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 8px;
-            padding: 8px 14px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-            font-size: 12px;
-            color: #6b7280;
+            position: absolute; bottom: 30px; left: 10px; z-index: 1000;
+            background: rgba(255,255,255,0.96); border-radius: 8px;
+            padding: 8px 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            font-size: 12px; color: #6b7280;
         }
         .info-box a { color: #2e86ab; text-decoration: none; }
         .info-box a:hover { text-decoration: underline; }
 
         .legend {
-            position: absolute;
-            bottom: 80px;
-            left: 10px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 8px;
-            padding: 10px 14px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: absolute; bottom: 80px; left: 10px; z-index: 1000;
+            background: rgba(255,255,255,0.96); border-radius: 8px;
+            padding: 10px 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.15);
             font-size: 11px;
         }
         .legend h4 { font-size: 12px; margin-bottom: 6px; color: #0c2d48; }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin: 2px 0;
-            color: #374151;
-        }
-        .legend-color {
-            width: 24px;
-            height: 10px;
-            border-radius: 2px;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
+        .legend-item { display: flex; align-items: center; gap: 6px; margin: 3px 0; color: #374151; }
+        .legend-color { width: 28px; height: 14px; border-radius: 2px; border: 1px solid rgba(0,0,0,0.15); }
 
         .loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2000;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 20px 32px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            font-size: 14px;
-            color: #374151;
-            display: none;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+            z-index: 2000; background: rgba(255,255,255,0.95); padding: 20px 32px;
+            border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            font-size: 14px; color: #374151; display: none;
         }
     </style>
 </head>
 <body>
     <div id="map"></div>
-    <div class="loading" id="loading">Carregando isolinhas...</div>
+    <div class="loading" id="loading">Carregando dados...</div>
 
     <div class="controls">
         <h3>Batimetria — Florianópolis</h3>
-
-        <label>Dados:</label>
+        <label>Resolução:</label>
         <select id="dataLevel">
-            <option value="z12">Visão geral (~34 m/px) — 2.2 MB</option>
-            <option value="z14" selected>Detalhe médio (~8.5 m/px) — 19 MB</option>
+            <option value="z12" selected>Visão geral (~34 m/px) — rápido</option>
+            <option value="z14">Detalhe médio (~8.5 m/px) — 2.9 MB</option>
         </select>
 
         <div class="section">
-            <label><input type="checkbox" id="toggleIsobaths" checked> Isolinhas batimétricas</label>
+            <label><input type="checkbox" id="toggleAreas" checked> Áreas de profundidade</label>
             <label><input type="checkbox" id="toggleCoastline" checked> Linha de costa</label>
+            <label><input type="checkbox" id="toggleLabels" checked> Rótulos de profundidade</label>
+        </div>
+
+        <div class="section">
+            <label>Opacidade: <span id="opacityVal">70%</span></label>
+            <input type="range" id="opacitySlider" min="10" max="100" value="70" style="width:100%">
         </div>
 
         <div class="section">
             <label>Mapa base:</label>
             <select id="baseMap">
+                <option value="dark" selected>Escuro (CartoDB)</option>
                 <option value="osm">OpenStreetMap</option>
                 <option value="satellite">Satélite (Esri)</option>
-                <option value="dark" selected>Escuro (CartoDB)</option>
             </select>
         </div>
 
@@ -141,20 +85,24 @@
             <label>Zoom: <span id="zoomLevel">-</span></label>
             <label>Coords: <span id="coords">-</span></label>
         </div>
-        <p class="hint">Clique em uma isolinha para ver a banda de profundidade.</p>
+        <p class="hint">Clique em uma área para ver a banda de profundidade.</p>
     </div>
 
     <div class="legend">
         <h4>Profundidade relativa</h4>
-        <div class="legend-item"><span class="legend-color" style="background:#c0e8f8"></span> Band 0 — Muito raso</div>
-        <div class="legend-item"><span class="legend-color" style="background:#b0e0f8"></span> Band 2</div>
-        <div class="legend-item"><span class="legend-color" style="background:#a0d8f8"></span> Band 4 — Médio</div>
-        <div class="legend-item"><span class="legend-color" style="background:#88d0f8"></span> Band 6</div>
-        <div class="legend-item"><span class="legend-color" style="background:#20b0f8"></span> Band 8 — Muito fundo</div>
+        <div class="legend-item"><span class="legend-color" style="background:#c0e8f8"></span> 0 — Muito raso</div>
+        <div class="legend-item"><span class="legend-color" style="background:#b8e0f8"></span> 1 — Raso</div>
+        <div class="legend-item"><span class="legend-color" style="background:#b0e0f8"></span> 2</div>
+        <div class="legend-item"><span class="legend-color" style="background:#a8e0f8"></span> 3</div>
+        <div class="legend-item"><span class="legend-color" style="background:#a0d8f8"></span> 4 — Médio</div>
+        <div class="legend-item"><span class="legend-color" style="background:#98d8f8"></span> 5</div>
+        <div class="legend-item"><span class="legend-color" style="background:#88d0f8"></span> 6</div>
+        <div class="legend-item"><span class="legend-color" style="background:#70c8f8"></span> 7 — Fundo</div>
+        <div class="legend-item"><span class="legend-color" style="background:#20b0f8"></span> 8 — Muito fundo</div>
     </div>
 
     <div class="info-box">
-        Isolinhas batimétricas — Ilha de Santa Catarina · <a href="index.html">Sobre o dataset</a> · <a href="https://github.com/paladini/mapa-batimetrico-florianopolis">GitHub</a>
+        Mapa batimétrico — Ilha de Santa Catarina · <a href="index.html">Sobre o dataset</a> · <a href="https://github.com/paladini/mapa-batimetrico-florianopolis">GitHub</a>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -162,119 +110,152 @@
         const CENTER = [-27.6, -48.5];
         const DEFAULT_ZOOM = 12;
 
+        const BAND_NAMES = [
+            'Muito raso', 'Raso', 'Raso-médio', 'Médio-raso',
+            'Médio', 'Médio-fundo', 'Fundo-médio', 'Fundo', 'Muito fundo'
+        ];
+
         const baseMaps = {
-            osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap', maxZoom: 19,
-            }),
-            satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                attribution: '© Esri', maxZoom: 19,
-            }),
-            dark: L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-                attribution: '© CartoDB', maxZoom: 19,
-            }),
+            osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap', maxZoom: 19 }),
+            satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: '© Esri', maxZoom: 19 }),
+            dark: L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { attribution: '© CartoDB', maxZoom: 19 }),
         };
 
-        const map = L.map('map', {
-            center: CENTER,
-            zoom: DEFAULT_ZOOM,
-            layers: [baseMaps.dark],
-        });
+        const map = L.map('map', { center: CENTER, zoom: DEFAULT_ZOOM, layers: [baseMaps.dark] });
 
         let currentBase = 'dark';
-        let isobathLayer = null;
+        let areasLayer = null;
         let coastlineLayer = null;
-        let currentLevel = 'z14';
+        let labelsLayer = null;
+        let currentOpacity = 0.7;
 
-        function getStyle(feature) {
+        function areaStyle(feature) {
             return {
-                color: feature.properties.color || '#2e86ab',
-                weight: 1.2,
-                opacity: 0.85,
+                fillColor: feature.properties.color,
+                fillOpacity: currentOpacity,
+                color: '#ffffff',
+                weight: 0.3,
+                opacity: 0.4,
             };
         }
 
         function coastStyle() {
-            return {
-                color: '#f59e0b',
-                weight: 2,
-                opacity: 0.9,
-            };
+            return { color: '#f59e0b', weight: 2.5, opacity: 0.9, dashArray: '6,3' };
         }
 
-        function onEachIsobath(feature, layer) {
-            if (feature.properties) {
-                const p = feature.properties;
-                layer.bindPopup(
-                    '<strong>Isolinha batimétrica</strong><br>' +
-                    'Banda rasa: ' + p.band_shallow + '<br>' +
-                    'Banda funda: ' + p.band_deep + '<br>' +
-                    'Label: ' + (p.depth_label || '-') + '<br>' +
-                    'Cor: <span style="background:' + p.color + ';padding:2px 12px;border-radius:2px;border:1px solid #ccc"></span>'
-                );
+        function onEachArea(feature, layer) {
+            const p = feature.properties;
+            const name = BAND_NAMES[p.band] || ('Band ' + p.band);
+            layer.bindPopup(
+                '<div style="font-size:13px">' +
+                '<strong style="font-size:14px">' + name + '</strong><br>' +
+                'Banda: ' + p.band + ' / 8<br>' +
+                'Cor: <span style="display:inline-block;width:40px;height:14px;background:' + p.color + ';border:1px solid #ccc;border-radius:2px;vertical-align:middle"></span>' +
+                '</div>'
+            );
+        }
+
+        function createLabels(geojsonData) {
+            const group = L.layerGroup();
+            const byBand = {};
+
+            for (const f of geojsonData.features) {
+                const b = f.properties.band;
+                if (!byBand[b]) byBand[b] = [];
+                byBand[b].push(f);
             }
+
+            for (const band in byBand) {
+                const features = byBand[band];
+                // Pick the largest polygons for labels (avoid cluttering)
+                const sorted = features
+                    .map(f => {
+                        const coords = f.geometry.type === 'Polygon' ? f.geometry.coordinates[0] : 
+                                       f.geometry.type === 'MultiPolygon' ? f.geometry.coordinates[0][0] : [];
+                        // Approximate area by bounding box
+                        if (coords.length < 3) return { f, area: 0 };
+                        const lons = coords.map(c => c[0]);
+                        const lats = coords.map(c => c[1]);
+                        const area = (Math.max(...lons) - Math.min(...lons)) * (Math.max(...lats) - Math.min(...lats));
+                        const cLat = (Math.min(...lats) + Math.max(...lats)) / 2;
+                        const cLon = (Math.min(...lons) + Math.max(...lons)) / 2;
+                        return { f, area, lat: cLat, lon: cLon };
+                    })
+                    .filter(x => x.area > 0)
+                    .sort((a, b) => b.area - a.area);
+
+                // Label up to 5 largest polygons per band
+                const toLabel = sorted.slice(0, 5);
+                for (const item of toLabel) {
+                    const name = BAND_NAMES[band] || ('Band ' + band);
+                    const icon = L.divIcon({
+                        className: '',
+                        html: '<div style="background:rgba(0,0,0,0.6);color:#fff;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:600;white-space:nowrap;pointer-events:none">' + name + '</div>',
+                        iconSize: null,
+                        iconAnchor: [30, 8],
+                    });
+                    group.addLayer(L.marker([item.lat, item.lon], { icon, interactive: false }));
+                }
+            }
+            return group;
         }
 
         const loadingEl = document.getElementById('loading');
 
         async function loadData(level) {
             loadingEl.style.display = 'block';
-            loadingEl.textContent = 'Carregando isolinhas ' + level + '...';
+            loadingEl.textContent = 'Carregando áreas de profundidade...';
 
-            // Remove existing layers
-            if (isobathLayer) { map.removeLayer(isobathLayer); isobathLayer = null; }
+            if (areasLayer) { map.removeLayer(areasLayer); areasLayer = null; }
             if (coastlineLayer) { map.removeLayer(coastlineLayer); coastlineLayer = null; }
+            if (labelsLayer) { map.removeLayer(labelsLayer); labelsLayer = null; }
 
             try {
-                // Load isobaths
-                const isoResp = await fetch('data/vectorized/isobaths_' + level + '.geojson');
-                if (isoResp.ok) {
-                    const isoData = await isoResp.json();
-                    isobathLayer = L.geoJSON(isoData, {
-                        style: getStyle,
-                        onEachFeature: onEachIsobath,
-                    });
-                    if (document.getElementById('toggleIsobaths').checked) {
-                        isobathLayer.addTo(map);
-                    }
+                const areaResp = await fetch('data/vectorized/depth_areas_' + level + '.geojson');
+                if (areaResp.ok) {
+                    const areaData = await areaResp.json();
+                    areasLayer = L.geoJSON(areaData, { style: areaStyle, onEachFeature: onEachArea });
+                    if (document.getElementById('toggleAreas').checked) areasLayer.addTo(map);
+
+                    labelsLayer = createLabels(areaData);
+                    if (document.getElementById('toggleLabels').checked) labelsLayer.addTo(map);
                 }
 
-                // Load coastline
                 loadingEl.textContent = 'Carregando linha de costa...';
                 const coastResp = await fetch('data/vectorized/coastline_' + level + '.geojson');
                 if (coastResp.ok) {
                     const coastData = await coastResp.json();
-                    coastlineLayer = L.geoJSON(coastData, {
-                        style: coastStyle,
-                    });
-                    if (document.getElementById('toggleCoastline').checked) {
-                        coastlineLayer.addTo(map);
-                    }
+                    coastlineLayer = L.geoJSON(coastData, { style: coastStyle });
+                    if (document.getElementById('toggleCoastline').checked) coastlineLayer.addTo(map);
                 }
             } catch (e) {
-                loadingEl.textContent = 'Erro ao carregar dados: ' + e.message;
+                loadingEl.textContent = 'Erro: ' + e.message;
                 setTimeout(() => { loadingEl.style.display = 'none'; }, 3000);
                 return;
             }
-
             loadingEl.style.display = 'none';
-            currentLevel = level;
         }
 
         // Controls
-        document.getElementById('dataLevel').addEventListener('change', function() {
-            loadData(this.value);
-        });
+        document.getElementById('dataLevel').addEventListener('change', function() { loadData(this.value); });
 
-        document.getElementById('toggleIsobaths').addEventListener('change', function() {
-            if (!isobathLayer) return;
-            if (this.checked) { isobathLayer.addTo(map); }
-            else { map.removeLayer(isobathLayer); }
+        document.getElementById('toggleAreas').addEventListener('change', function() {
+            if (!areasLayer) return;
+            this.checked ? areasLayer.addTo(map) : map.removeLayer(areasLayer);
         });
-
         document.getElementById('toggleCoastline').addEventListener('change', function() {
             if (!coastlineLayer) return;
-            if (this.checked) { coastlineLayer.addTo(map); }
-            else { map.removeLayer(coastlineLayer); }
+            this.checked ? coastlineLayer.addTo(map) : map.removeLayer(coastlineLayer);
+        });
+        document.getElementById('toggleLabels').addEventListener('change', function() {
+            if (!labelsLayer) return;
+            this.checked ? labelsLayer.addTo(map) : map.removeLayer(labelsLayer);
+        });
+
+        document.getElementById('opacitySlider').addEventListener('input', function() {
+            currentOpacity = this.value / 100;
+            document.getElementById('opacityVal').textContent = this.value + '%';
+            if (areasLayer) areasLayer.setStyle(areaStyle);
         });
 
         document.getElementById('baseMap').addEventListener('change', function() {
@@ -284,16 +265,10 @@
             baseMaps[currentBase].bringToBack();
         });
 
-        map.on('moveend zoomend', function() {
-            document.getElementById('zoomLevel').textContent = map.getZoom();
-        });
-        map.on('mousemove', function(e) {
-            document.getElementById('coords').textContent =
-                e.latlng.lat.toFixed(5) + ', ' + e.latlng.lng.toFixed(5);
-        });
+        map.on('moveend zoomend', () => { document.getElementById('zoomLevel').textContent = map.getZoom(); });
+        map.on('mousemove', e => { document.getElementById('coords').textContent = e.latlng.lat.toFixed(5) + ', ' + e.latlng.lng.toFixed(5); });
         document.getElementById('zoomLevel').textContent = map.getZoom();
 
-        // Initial load
         loadData('z12');
     </script>
 </body>
