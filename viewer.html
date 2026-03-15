@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonarChart Viewer - Ilha de Santa Catarina</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        #map { width: 100vw; height: 100vh; }
+        
+        .controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 12px 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 13px;
+            max-width: 260px;
+        }
+        .controls h3 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            color: #1a1a2e;
+        }
+        .controls label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 4px 0;
+            cursor: pointer;
+        }
+        .controls input[type="range"] {
+            width: 100%;
+            margin: 4px 0;
+        }
+        .controls .section {
+            border-top: 1px solid #eee;
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        .controls .opacity-value {
+            font-weight: 600;
+            color: #0066cc;
+        }
+        .info-box {
+            position: absolute;
+            bottom: 30px;
+            left: 10px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 8px 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <div class="controls">
+        <h3>🗺️ SonarChart Viewer</h3>
+        <label>
+            <input type="checkbox" id="toggleSonar" checked>
+            SonarChart Overlay
+        </label>
+        <div>
+            <label>Opacidade: <span class="opacity-value" id="opacityValue">80%</span></label>
+            <input type="range" id="opacitySlider" min="0" max="100" value="80">
+        </div>
+        
+        <div class="section">
+            <label>
+                <input type="radio" name="baseMap" value="osm" checked>
+                OpenStreetMap
+            </label>
+            <label>
+                <input type="radio" name="baseMap" value="satellite">
+                Satélite (Esri)
+            </label>
+            <label>
+                <input type="radio" name="baseMap" value="dark">
+                Escuro (CartoDB)
+            </label>
+        </div>
+        
+        <div class="section">
+            <label>Zoom Level: <span id="zoomLevel">-</span></label>
+            <label>Coords: <span id="coords">-</span></label>
+        </div>
+    </div>
+    
+    <div class="info-box">
+        Ilha de Santa Catarina — Dados batimétricos Navionics SonarChart (uso pessoal)
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Ilha de Santa Catarina center
+        const CENTER = [-27.6, -48.5];
+        const DEFAULT_ZOOM = 12;
+
+        // Base maps
+        const baseMaps = {
+            osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap',
+                maxZoom: 19,
+            }),
+            satellite: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: '© Esri',
+                maxZoom: 19,
+            }),
+            dark: L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© CartoDB',
+                maxZoom: 19,
+            }),
+        };
+
+        // Initialize map
+        const map = L.map('map', {
+            center: CENTER,
+            zoom: DEFAULT_ZOOM,
+            layers: [baseMaps.osm],
+        });
+
+        // SonarChart local tile layer
+        const sonarLayer = L.tileLayer('tiles/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            minZoom: 10,
+            opacity: 0.8,
+            errorTileUrl: '',  // don't show error tiles
+            tms: false,
+        });
+        sonarLayer.addTo(map);
+
+        // Handle missing tiles gracefully
+        sonarLayer.on('tileerror', function(error) {
+            error.tile.style.display = 'none';
+        });
+
+        // Controls
+        let currentBase = 'osm';
+
+        document.getElementById('toggleSonar').addEventListener('change', function() {
+            if (this.checked) {
+                sonarLayer.addTo(map);
+            } else {
+                map.removeLayer(sonarLayer);
+            }
+        });
+
+        document.getElementById('opacitySlider').addEventListener('input', function() {
+            const opacity = this.value / 100;
+            sonarLayer.setOpacity(opacity);
+            document.getElementById('opacityValue').textContent = this.value + '%';
+        });
+
+        document.querySelectorAll('input[name="baseMap"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                map.removeLayer(baseMaps[currentBase]);
+                currentBase = this.value;
+                baseMaps[currentBase].addTo(map);
+                baseMaps[currentBase].bringToBack();
+            });
+        });
+
+        // Update info
+        map.on('moveend zoomend', function() {
+            document.getElementById('zoomLevel').textContent = map.getZoom();
+        });
+        map.on('mousemove', function(e) {
+            document.getElementById('coords').textContent = 
+                e.latlng.lat.toFixed(5) + ', ' + e.latlng.lng.toFixed(5);
+        });
+        document.getElementById('zoomLevel').textContent = map.getZoom();
+
+        // Bounding box overlay (optional visual reference)
+        const bbox = L.rectangle([
+            [-27.85, -48.65],
+            [-27.35, -48.35]
+        ], {
+            color: '#ff6600',
+            weight: 1,
+            fillOpacity: 0,
+            dashArray: '5,5',
+        });
+        // bbox.addTo(map);  // uncomment to show download area
+    </script>
+</body>
+</html>

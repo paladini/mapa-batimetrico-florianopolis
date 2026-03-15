@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bathymetry of Ilha de Santa Catarina — Vector Isobaths GeoJSON (Florianópolis, Brazil)</title>
+    <meta name="description" content="Free download of vector bathymetric isobaths (GeoJSON) and coastline for Greater Florianópolis. 37,000+ isobaths with 9 depth bands, derived from crowdsourced sonar data.">
+    <meta name="keywords" content="bathymetry, florianopolis, ilha de santa catarina, isobaths, depth contours, marine depth, geojson, fishing, marine map, open data, coastline, underwater relief, sonar crowdsourced, brazil">
+    <meta name="author" content="Fernando Paladini">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://paladini.github.io/mapa-batimetrico-florianopolis/index.en.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://paladini.github.io/mapa-batimetrico-florianopolis/">
+    <link rel="alternate" hreflang="en" href="https://paladini.github.io/mapa-batimetrico-florianopolis/index.en.html">
+    <link rel="alternate" hreflang="x-default" href="https://paladini.github.io/mapa-batimetrico-florianopolis/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bathymetry of Ilha de Santa Catarina — Vector Isobaths">
+    <meta property="og:description" content="Free bathymetric isobaths and coastline for Greater Florianópolis in GeoJSON.">
+    <meta property="og:url" content="https://paladini.github.io/mapa-batimetrico-florianopolis/index.en.html">
+    <meta property="og:site_name" content="Florianópolis Bathymetry">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bathymetry of Ilha de Santa Catarina — Vector Isobaths">
+    <meta name="twitter:description" content="Free download of bathymetric isobaths for Greater Florianópolis in GeoJSON.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "Dataset",
+        "name": "Bathymetric Isobaths — Greater Florianópolis",
+        "alternateName": "Isolinhas Batimétricas — Ilha de Santa Catarina",
+        "description": "Vector bathymetric isobaths and coastline for the Greater Florianópolis region (Ilha de Santa Catarina), SC, Brazil. Derived from crowdsourced sonar data, with 9 relative depth bands. GeoJSON format, EPSG:4326 (WGS84).",
+        "url": "https://paladini.github.io/mapa-batimetrico-florianopolis/index.en.html",
+        "sameAs": "https://github.com/paladini/mapa-batimetrico-florianopolis",
+        "keywords": ["bathymetry", "isobaths", "florianopolis", "marine depth", "geojson", "coastline", "fishing", "ilha de santa catarina", "depth contours", "open data"],
+        "creator": { "@type": "Person", "name": "Fernando Paladini", "url": "https://github.com/paladini" },
+        "spatialCoverage": { "@type": "Place", "name": "Ilha de Santa Catarina, Florianópolis, SC, Brazil", "geo": { "@type": "GeoShape", "box": "-27.85 -48.65 -27.35 -48.35" } },
+        "temporalCoverage": "2026",
+        "distribution": [
+            { "@type": "DataDownload", "encodingFormat": "application/geo+json", "contentUrl": "https://github.com/paladini/mapa-batimetrico-florianopolis/raw/main/data/vectorized/isobaths_z12.geojson", "name": "isobaths_z12.geojson", "description": "Bathymetric isobaths — overview (~34 m/px)" },
+            { "@type": "DataDownload", "encodingFormat": "application/geo+json", "contentUrl": "https://github.com/paladini/mapa-batimetrico-florianopolis/raw/main/data/vectorized/isobaths_z14.geojson", "name": "isobaths_z14.geojson", "description": "Bathymetric isobaths — medium detail (~8.5 m/px)" },
+            { "@type": "DataDownload", "encodingFormat": "application/geo+json", "contentUrl": "https://github.com/paladini/mapa-batimetrico-florianopolis/raw/main/data/vectorized/coastline_z12.geojson", "name": "coastline_z12.geojson", "description": "Coastline — overview" },
+            { "@type": "DataDownload", "encodingFormat": "application/geo+json", "contentUrl": "https://github.com/paladini/mapa-batimetrico-florianopolis/raw/main/data/vectorized/coastline_z14.geojson", "name": "coastline_z14.geojson", "description": "Coastline — medium detail" }
+        ],
+        "measurementTechnique": "Vectorization of crowdsourced sonar bathymetric data",
+        "variableMeasured": [{ "@type": "PropertyValue", "name": "Relative depth", "description": "9 relative depth bands represented as vector isobath lines" }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "What are bathymetric isobaths?", "acceptedAnswer": { "@type": "Answer", "text": "Bathymetric isobaths are curves connecting points of equal depth on the seabed — like contour lines, but for the ocean. This dataset contains vector isobaths for 9 depth bands covering Ilha de Santa Catarina." } },
+            { "@type": "Question", "name": "What format is the data in?", "acceptedAnswer": { "@type": "Answer", "text": "GeoJSON — an open, universal standard for geospatial data. Works in QGIS, Google Earth, Leaflet, Mapbox, Python (geopandas), R (sf), and any GIS tool." } },
+            { "@type": "Question", "name": "Can I use this for fishing near Florianópolis?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The isobaths show seabed depth variations and relief for Ilha de Santa Catarina — useful for finding fishing spots, channels, reefs, and underwater structures." } },
+            { "@type": "Question", "name": "Are depths in meters?", "acceptedAnswer": { "@type": "Answer", "text": "They are relative: 9 bands from band 0 (shallowest) to band 8 (deepest). Not absolute meter values, but they clearly indicate depth variations and underwater relief contours." } },
+            { "@type": "Question", "name": "What area does it cover?", "acceptedAnswer": { "@type": "Answer", "text": "Greater Florianópolis: from Naufragados (lat -27.85) to Ponta das Canas (lat -27.35), from Baía Sul (lon -48.65) to the oceanic coast (lon -48.35). Coordinates in EPSG:4326 (WGS84)." } }
+        ]
+    }
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{--b9:#0c2d48;--b7:#145374;--b5:#2e86ab;--b3:#5da9c8;--b1:#c4dfe6;--b0:#eef5f8;--s1:#f7f3ee;--s2:#ede5d8;--g7:#374151;--g5:#6b7280;--g3:#d1d5db;--w:#fff;--r:6px}
+        body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--g7);background:var(--w);line-height:1.65;-webkit-font-smoothing:antialiased}
+        a{color:var(--b5);text-decoration:none}a:hover{text-decoration:underline}
+        .c{max-width:960px;margin:0 auto;padding:0 24px}
+        .hero{background:linear-gradient(168deg,var(--b0) 0%,var(--w) 50%,var(--s1) 100%);padding:56px 0 48px;border-bottom:1px solid var(--b1);position:relative}
+        .badge{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:#15803d;background:#dcfce7;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+        .hero h1{font-size:clamp(1.7rem,4vw,2.5rem);color:var(--b9);line-height:1.2;margin-bottom:12px;font-weight:700;letter-spacing:-.3px}
+        .hero .lead{font-size:1.1rem;color:var(--g5);max-width:640px;margin-bottom:24px}
+        .stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:28px}
+        .sv{font-size:1.5rem;font-weight:700;color:var(--b7);line-height:1.1}
+        .sl{font-size:.82rem;color:var(--g5);margin-top:2px}
+        .nl{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:var(--r);font-size:.9rem;font-weight:500;transition:background .15s}
+        .bp{background:var(--b5);color:var(--w)}.bp:hover{background:var(--b7);text-decoration:none}
+        .bo{background:var(--w);color:var(--b7);border:1px solid var(--b3)}.bo:hover{background:var(--b0);text-decoration:none}
+        section{padding:52px 0}
+        section h2{font-size:1.45rem;color:var(--b9);margin-bottom:8px;font-weight:700}
+        .slead{color:var(--g5);margin-bottom:28px;max-width:640px}
+        .ds{background:var(--b0)}
+        .dg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+        .dc{background:var(--w);border:1px solid var(--b1);border-radius:var(--r);padding:24px;transition:box-shadow .15s}
+        .dc:hover{box-shadow:0 2px 12px rgba(14,45,72,.08)}
+        .ft{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:3px 8px;border-radius:3px;margin-bottom:10px}
+        .tg{background:#dbeafe;color:#1e40af}.tc{background:#fef3c7;color:#92400e}
+        .dc h3{font-size:1rem;color:var(--b9);margin-bottom:6px}
+        .dc p{font-size:.88rem;color:var(--g5);margin-bottom:14px;line-height:1.5}
+        .dc .m{font-size:.8rem;color:var(--g5);margin-bottom:14px}
+        .dc .btn{width:100%;justify-content:center}
+        .bs{background:var(--s1)}
+        .bg{display:flex;gap:6px;margin-bottom:20px;height:32px;border-radius:var(--r);overflow:hidden}
+        .bg div{flex:1}
+        .bl{display:flex;justify-content:space-between;font-size:.8rem;color:var(--g5)}
+        .cg{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+        @media(max-width:640px){.cg{grid-template-columns:1fr}}
+        .zt{width:100%;border-collapse:collapse;font-size:.9rem}
+        .zt th{text-align:left;font-weight:600;color:var(--b9);padding:8px 12px;border-bottom:2px solid var(--b1)}
+        .zt td{padding:8px 12px;border-bottom:1px solid var(--g3)}
+        .bi{background:var(--w);border:1px solid var(--b1);border-radius:var(--r);padding:20px;font-size:.9rem}
+        .bi h3{font-size:1rem;color:var(--b9);margin-bottom:10px}
+        .bi dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
+        .bi dt{font-weight:600;color:var(--g7)}.bi dd{color:var(--g5);font-family:'SF Mono','Consolas',monospace;font-size:.85rem}
+        .cs{background:#f0fdf4}
+        .ci{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+        .ci div{background:var(--w);border:1px solid #dcfce7;border-radius:var(--r);padding:16px}
+        .ci h3{font-size:.95rem;color:var(--b9);margin-bottom:4px}
+        .ci p{font-size:.82rem;color:var(--g5)}
+        .cb{background:var(--s1)}
+        .cd{background:var(--b9);color:#e2e8f0;padding:20px;border-radius:var(--r);overflow-x:auto;font-family:'SF Mono','Consolas','Liberation Mono',monospace;font-size:.85rem;line-height:1.55;margin-bottom:16px}
+        .cd .c0{color:#6b8aad}.cd .k{color:#7dd3fc}.cd .s{color:#86efac}.cd .f{color:#fbbf24}
+        .eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+        .ec{background:var(--w);border:1px solid var(--s2);border-radius:var(--r);overflow:hidden}
+        .ec h3{font-size:.9rem;padding:12px 16px;border-bottom:1px solid var(--s2);color:var(--b9)}
+        .ec .cd{margin:0;border-radius:0}
+        .vb{background:var(--b7);color:var(--w);padding:40px 0;text-align:center}
+        .vb h2{color:var(--w);margin-bottom:10px}.vb p{color:var(--b1);margin-bottom:20px}
+        .vb .bp{background:var(--w);color:var(--b7)}.vb .bp:hover{background:var(--b0)}
+        .fl{max-width:700px}
+        .fi{border-bottom:1px solid var(--g3);padding:18px 0}.fi:last-child{border-bottom:none}
+        .fi h3{font-size:1rem;color:var(--b9);margin-bottom:6px}
+        .fi p{font-size:.92rem;color:var(--g5)}
+        footer{border-top:1px solid var(--g3);padding:28px 0;font-size:.82rem;color:var(--g5)}
+        footer .fw{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+        footer nav{display:flex;gap:20px}
+        .ls{position:absolute;top:16px;right:24px;font-size:.82rem}
+        @media(max-width:480px){.stats{gap:20px}.sv{font-size:1.25rem}.nl{flex-direction:column}.nl .btn{width:100%;justify-content:center}}
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="c">
+        <span class="ls"><a href="index.html" hreflang="pt-BR">🇧🇷 PT</a> &nbsp;|&nbsp; 🇺🇸 EN</span>
+        <span class="badge">Open data · GeoJSON</span>
+        <h1>Bathymetry of<br>Ilha de Santa Catarina</h1>
+        <p class="lead">Vector bathymetric isobaths and coastline for Greater Florianópolis, derived from crowdsourced sonar data. <strong>Free download in GeoJSON</strong> — open, universal format ready for any GIS software.</p>
+        <div class="nl">
+            <a href="#downloads" class="btn bp"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 2v9m0 0l-3-3m3 3l3-3M3 13h10"/></svg> Download GeoJSON</a>
+            <a href="viewer.html" class="btn bo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg> Interactive map</a>
+            <a href="https://github.com/paladini/mapa-batimetrico-florianopolis" class="btn bo">GitHub</a>
+        </div>
+        <div class="stats">
+            <div><div class="sv">37,753</div><div class="sl">bathymetric isobaths</div></div>
+            <div><div class="sv">7,512</div><div class="sl">coastline segments</div></div>
+            <div><div class="sv">9 bands</div><div class="sl">of relative depth</div></div>
+            <div><div class="sv">GeoJSON</div><div class="sl">open universal format</div></div>
+        </div>
+    </div>
+</header>
+
+<section class="ds" id="downloads">
+    <div class="c">
+        <h2>Download the data</h2>
+        <p class="slead">GeoJSON files ready to use — just download and open in QGIS, Google Earth, Leaflet, geopandas, or any GIS tool.</p>
+        <div class="dg">
+            <article class="dc">
+                <span class="ft tg">Isobaths</span>
+                <h3>Overview (~34 m/px)</h3>
+                <p>4,284 bathymetric isobaths with 9 depth bands. Ideal for regional overview.</p>
+                <div class="m">isobaths_z12.geojson · 2.2 MB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/raw/main/data/vectorized/isobaths_z12.geojson" class="btn bp" download>Download</a>
+            </article>
+            <article class="dc">
+                <span class="ft tg">Isobaths</span>
+                <h3>Medium detail (~8.5 m/px)</h3>
+                <p>33,469 bathymetric isobaths with 9 depth bands. Good balance of detail and size.</p>
+                <div class="m">isobaths_z14.geojson · 19 MB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/raw/main/data/vectorized/isobaths_z14.geojson" class="btn bp" download>Download</a>
+            </article>
+            <article class="dc">
+                <span class="ft tc">Coastline</span>
+                <h3>Coast — overview</h3>
+                <p>459 land/water boundary segments for Ilha de Santa Catarina.</p>
+                <div class="m">coastline_z12.geojson · 614 KB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/raw/main/data/vectorized/coastline_z12.geojson" class="btn bp" download>Download</a>
+            </article>
+            <article class="dc">
+                <span class="ft tc">Coastline</span>
+                <h3>Coast — medium detail</h3>
+                <p>7,053 land/water boundary segments with higher precision.</p>
+                <div class="m">coastline_z14.geojson · 7.8 MB</div>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis/raw/main/data/vectorized/coastline_z14.geojson" class="btn bp" download>Download</a>
+            </article>
+        </div>
+        <p style="margin-top:18px;font-size:.85rem;color:var(--g5)">Higher resolutions (high and maximum detail) can be generated locally with the <a href="https://github.com/paladini/mapa-batimetrico-florianopolis">script available in the repository</a>.</p>
+    </div>
+</section>
+
+<section class="bs">
+    <div class="c">
+        <h2>Depth bands</h2>
+        <p class="slead">Each isobath separates two adjacent relative depth bands. 9 bands total.</p>
+        <div class="bg">
+            <div style="background:#c0e8f8" title="Band 0 — shallowest"></div>
+            <div style="background:#b8e0f8" title="Band 1"></div>
+            <div style="background:#b0e0f8" title="Band 2"></div>
+            <div style="background:#a8e0f8" title="Band 3"></div>
+            <div style="background:#a0d8f8" title="Band 4"></div>
+            <div style="background:#98d8f8" title="Band 5"></div>
+            <div style="background:#88d0f8" title="Band 6"></div>
+            <div style="background:#70c8f8" title="Band 7"></div>
+            <div style="background:#20b0f8" title="Band 8 — deepest"></div>
+        </div>
+        <div class="bl"><span>Shallow (band 0)</span><span>Deep (band 8)</span></div>
+        <p style="margin-top:16px;font-size:.88rem;color:var(--g5)">Each GeoJSON feature has properties <code>band_shallow</code>, <code>band_deep</code>, <code>depth_label</code>, and <code>color</code>.</p>
+    </div>
+</section>
+
+<section id="coverage">
+    <div class="c">
+        <h2>Coverage and resolution</h2>
+        <p class="slead">Bathymetric data for Ilha de Santa Catarina at multiple detail levels.</p>
+        <div class="cg">
+            <table class="zt">
+                <thead><tr><th>Level</th><th>Isobaths</th><th>Coast</th><th>Resolution</th></tr></thead>
+                <tbody>
+                    <tr><td>Overview</td><td>4,284</td><td>459</td><td>~34 m/px</td></tr>
+                    <tr><td>Medium detail</td><td>33,469</td><td>7,053</td><td>~8.5 m/px</td></tr>
+                    <tr><td>High detail*</td><td>145,237</td><td>32,459</td><td>~2.1 m/px</td></tr>
+                    <tr><td>Maximum detail*</td><td>1,272,324</td><td>143,819</td><td>~0.5 m/px</td></tr>
+                </tbody>
+            </table>
+            <div class="bi">
+                <h3>Covered region</h3>
+                <dl>
+                    <dt>North</dt><dd>-27.35° (Ponta das Canas)</dd>
+                    <dt>South</dt><dd>-27.85° (Naufragados)</dd>
+                    <dt>East</dt><dd>-48.35° (oceanic coast)</dd>
+                    <dt>West</dt><dd>-48.65° (inner Baía Sul)</dd>
+                    <dt>CRS</dt><dd>EPSG:4326 (WGS84)</dd>
+                </dl>
+            </div>
+        </div>
+        <p style="margin-top:12px;font-size:.82rem;color:var(--g5)">* Generate locally with <code>python3 scripts/vectorize_tiles.py --zoom 16 18</code></p>
+    </div>
+</section>
+
+<section class="cs">
+    <div class="c">
+        <h2>Compatibility</h2>
+        <p class="slead">GeoJSON is an open standard (RFC 7946) supported by virtually any geospatial tool.</p>
+        <div class="ci">
+            <div><h3>QGIS</h3><p>Open directly as vector layer</p></div>
+            <div><h3>Google Earth</h3><p>Import as data overlay</p></div>
+            <div><h3>Leaflet / Mapbox</h3><p>Load via L.geoJSON() or source</p></div>
+            <div><h3>Python</h3><p>geopandas, shapely, fiona</p></div>
+            <div><h3>R</h3><p>sf::st_read() directly</p></div>
+            <div><h3>PostGIS</h3><p>ogr2ogr to import into database</p></div>
+            <div><h3>ArcGIS</h3><p>Native GeoJSON support</p></div>
+            <div><h3>deck.gl</h3><p>3D visualization in browser</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="vb">
+    <div class="c">
+        <h2>Interactive viewer</h2>
+        <p>Browse the bathymetric data directly in your browser, overlaid on a base map.</p>
+        <a href="viewer.html" class="btn bp"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M6 5l5 3-5 3V5z"/></svg> Open viewer</a>
+    </div>
+</section>
+
+<section class="cb" id="how-to-use">
+    <div class="c">
+        <h2>How to use the data</h2>
+        <p class="slead">Quick examples for loading isobaths in common environments.</p>
+        <div class="eg">
+            <div class="ec">
+                <h3>Python (geopandas)</h3>
+                <pre class="cd"><span class="k">import</span> geopandas <span class="k">as</span> gpd
+
+gdf = gpd.<span class="f">read_file</span>(<span class="s">'data/vectorized/isobaths_z14.geojson'</span>)
+
+<span class="c0"># Filter deeper isobaths (band_deep >= 6)</span>
+deep = gdf[gdf.band_deep >= <span class="s">6</span>]
+deep.<span class="f">plot</span>(column=<span class="s">'band_deep'</span>, cmap=<span class="s">'Blues'</span>)</pre>
+            </div>
+            <div class="ec">
+                <h3>JavaScript (Leaflet)</h3>
+                <pre class="cd"><span class="f">fetch</span>(<span class="s">'data/vectorized/isobaths_z12.geojson'</span>)
+  .<span class="f">then</span>(r => r.<span class="f">json</span>())
+  .<span class="f">then</span>(data => {
+    L.<span class="f">geoJSON</span>(data, {
+      style: f => ({
+        color: f.properties.color,
+        weight: 1
+      })
+    }).<span class="f">addTo</span>(map);
+  });</pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq">
+    <div class="c">
+        <h2>Frequently asked questions</h2>
+        <div class="fl">
+            <div class="fi"><h3>What are bathymetric isobaths?</h3><p>Curves connecting points of equal seabed depth — like topographic contour lines, but for the ocean. Each isobath in this dataset separates two relative depth bands.</p></div>
+            <div class="fi"><h3>Where does this data come from?</h3><p>Derived from crowdsourced bathymetric data, generated from sonar readings submitted by boaters worldwide. The data was vectorized into isobath lines and coastline.</p></div>
+            <div class="fi"><h3>Do I need to install anything?</h3><p>No. GeoJSON files are plain text — just download and open in your preferred software (QGIS, Google Earth, Leaflet, geopandas, etc).</p></div>
+            <div class="fi"><h3>Can I use this for fishing near Florianópolis?</h3><p>Yes. The isobaths show depth variations and seabed relief for Ilha de Santa Catarina — useful for finding fishing spots, reefs, channels, and underwater structures.</p></div>
+            <div class="fi"><h3>Are depths absolute (in meters)?</h3><p>No. There are 9 relative bands (band 0 = shallowest to band 8 = deepest). The isobaths indicate where depth changes between bands, not exact meter values.</p></div>
+            <div class="fi"><h3>What coordinate system?</h3><p>EPSG:4326 (WGS84) — the same used by GPS, Google Maps, and OpenStreetMap.</p></div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="c">
+        <div class="fw">
+            <span>Ilha de Santa Catarina bathymetric data — crowdsourced sonar data</span>
+            <nav>
+                <a href="https://github.com/paladini/mapa-batimetrico-florianopolis">GitHub</a>
+                <a href="viewer.html">Viewer</a>
+                <a href="index.html">Português</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

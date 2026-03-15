@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Large vectorized data (generate locally: python3 scripts/vectorize_tiles.py --zoom 16 18)
+data/vectorized/*_z16.geojson
+data/vectorized/*_z18.geojson

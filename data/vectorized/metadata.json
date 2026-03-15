@@ -1,0 +1,64 @@
+{
+  "tool": "vectorize_tiles.py",
+  "description": "Isolinhas batimétricas extraídas dos tiles SonarChart",
+  "source": "Navionics SonarChart (via Garmin Marine Maps)",
+  "region": "Grande Florianópolis - Ilha de Santa Catarina",
+  "coordinate_system": "EPSG:4326 (WGS84)",
+  "depth_bands": [
+    {
+      "band": 0,
+      "label": "very_shallow",
+      "color": "#c0e8f8"
+    },
+    {
+      "band": 1,
+      "label": "shallow",
+      "color": "#b8e0f8"
+    },
+    {
+      "band": 2,
+      "label": "shallow_mid",
+      "color": "#b0e0f8"
+    },
+    {
+      "band": 3,
+      "label": "mid_shallow",
+      "color": "#a8e0f8"
+    },
+    {
+      "band": 4,
+      "label": "mid",
+      "color": "#a0d8f8"
+    },
+    {
+      "band": 5,
+      "label": "mid_deep",
+      "color": "#98d8f8"
+    },
+    {
+      "band": 6,
+      "label": "deep_mid",
+      "color": "#88d0f8"
+    },
+    {
+      "band": 7,
+      "label": "deep",
+      "color": "#70c8f8"
+    },
+    {
+      "band": 8,
+      "label": "very_deep",
+      "color": "#20b0f8"
+    }
+  ],
+  "note": "Profundidades são relativas (band 0=mais raso, band 8=mais fundo), não absolutas em metros.",
+  "zoom_levels": {
+    "18": {
+      "tiles_processed": 90009,
+      "isobath_features": 1272324,
+      "coastline_features": 143819,
+      "simplify_tolerance": 1e-05
+    }
+  },
+  "generated_at": "2026-03-15T12:57:00.826833+00:00"
+}
