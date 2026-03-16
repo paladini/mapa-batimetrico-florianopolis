@@ -3,32 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batimetria da Ilha de Santa Catarina — Isolinhas Vetoriais GeoJSON (Florianópolis)</title>
-    <meta name="description" content="Download gratuito de isolinhas batimétricas vetoriais (GeoJSON) e linha de costa da Grande Florianópolis. 37.000+ isolinhas com 9 bandas de profundidade, derivadas de dados de sonar crowdsourced.">
-    <meta name="keywords" content="batimetria, florianópolis, ilha de santa catarina, isolinhas, isobatas, profundidade marinha, geojson, pesca, mapa marítimo, dados abertos, linha de costa, relevo submarino, sonar crowdsourced">
+    <title>Mapa Batimétrico de Florianópolis — Dados de Profundidade do Mar da Ilha de Santa Catarina | Download GeoJSON Gratuito</title>
+    <meta name="description" content="Download gratuito de dados batimétricos da Grande Florianópolis: 1,4 milhão de isolinhas de profundidade e 245 mil polígonos de áreas de profundidade em GeoJSON. Cobre toda a Ilha de Santa Catarina, de Naufragados a Ponta das Canas, incluindo Baía Norte, Baía Sul, Lagoa da Conceição e costa oceânica. 9 níveis de profundidade, resolução até 0,5 m/pixel. Compatível com QGIS, Google Earth, Leaflet, geopandas.">
+    <meta name="keywords" content="batimetria florianópolis, mapa batimétrico ilha de santa catarina, profundidade do mar florianópolis, carta batimétrica santa catarina, isolinhas de profundidade, isobatas florianópolis, dados batimétricos download, geojson batimetria, pesca florianópolis mapa profundidade, baía norte profundidade, baía sul batimetria, lagoa da conceição, relevo submarino, fundo do mar, mapa de pesca, pesqueiro floripa, dados abertos marítimos, sonar crowdsourced, mapa náutico florianópolis">
     <meta name="author" content="Fernando Paladini">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="geo.region" content="BR-SC">
+    <meta name="geo.placename" content="Florianópolis, Santa Catarina, Brasil">
+    <meta name="geo.position" content="-27.6;-48.5">
+    <meta name="ICBM" content="-27.6, -48.5">
     <link rel="canonical" href="https://paladini.github.io/mapa-batimetrico-florianopolis/">
     <link rel="alternate" hreflang="pt-BR" href="https://paladini.github.io/mapa-batimetrico-florianopolis/">
     <link rel="alternate" hreflang="en" href="https://paladini.github.io/mapa-batimetrico-florianopolis/index.en.html">
     <link rel="alternate" hreflang="x-default" href="https://paladini.github.io/mapa-batimetrico-florianopolis/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Batimetria da Ilha de Santa Catarina — Isolinhas Vetoriais">
-    <meta property="og:description" content="Isolinhas batimétricas e linha de costa da Grande Florianópolis em GeoJSON. Download gratuito.">
+    <meta property="og:title" content="Mapa Batimétrico de Florianópolis — Dados de Profundidade do Mar Gratuitos">
+    <meta property="og:description" content="Download gratuito: 1,4 milhão de isolinhas de profundidade e 245 mil polígonos de áreas batimétricas da Ilha de Santa Catarina em GeoJSON. De Naufragados a Ponta das Canas.">
     <meta property="og:url" content="https://paladini.github.io/mapa-batimetrico-florianopolis/">
     <meta property="og:site_name" content="Batimetria Florianópolis">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:locale:alternate" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Batimetria da Ilha de Santa Catarina — Isolinhas Vetoriais">
-    <meta name="twitter:description" content="Download gratuito de isolinhas batimétricas da Grande Florianópolis em GeoJSON.">
+    <meta name="twitter:title" content="Mapa Batimétrico de Florianópolis — Dados de Profundidade do Mar Gratuitos">
+    <meta name="twitter:description" content="1,4 milhão de isolinhas + 245 mil polígonos de profundidade marinha da Ilha de Santa Catarina. GeoJSON gratuito para QGIS, Leaflet, geopandas.">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Dataset",
-        "name": "Isolinhas Batimétricas — Grande Florianópolis",
-        "alternateName": "Bathymetric Isobaths — Ilha de Santa Catarina",
-        "description": "Isolinhas batimétricas vetoriais e linha de costa da região da Grande Florianópolis (Ilha de Santa Catarina), SC, Brasil. Derivadas de dados de sonar crowdsourced, com 9 bandas de profundidade relativa. Formato GeoJSON, EPSG:4326 (WGS84).",
+        "name": "Mapa Batimétrico da Ilha de Santa Catarina — Dados de Profundidade do Mar de Florianópolis",
+        "alternateName": ["Bathymetric Map of Ilha de Santa Catarina", "Isolinhas Batimétricas da Grande Florianópolis", "Florianópolis Depth Data"],
+        "description": "Dataset batimétrico aberto da região da Grande Florianópolis (Ilha de Santa Catarina), SC, Brasil. Contém 1.455.274 isolinhas de profundidade, 245.457 polígonos de áreas de profundidade e 183.790 segmentos de linha de costa. Derivados de dados de sonar crowdsourced com 9 bandas de profundidade relativa. Formato GeoJSON (RFC 7946), sistema de coordenadas EPSG:4326 (WGS84). Cobre de Naufragados (sul) a Ponta das Canas (norte), incluindo Baía Norte, Baía Sul, Lagoa da Conceição e costa oceânica. Resoluções de 34 m/px (visão geral) a 0,5 m/px (máximo detalhe).",
         "url": "https://paladini.github.io/mapa-batimetrico-florianopolis/",
         "sameAs": "https://github.com/paladini/mapa-batimetrico-florianopolis",
         "keywords": ["batimetria", "isolinhas", "isobatas", "florianópolis", "profundidade marinha", "geojson", "linha de costa", "pesca", "ilha de santa catarina", "bathymetry", "isobaths"],
